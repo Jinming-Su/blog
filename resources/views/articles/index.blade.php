@@ -52,7 +52,7 @@
                         <td class="text-center my_ellipsis">{{$article->key_word}}</td>
                         <td class="text-center">{{$article->created_at}}</td>
                         <td class="text-center my_ellipsis">
-                            <a>{{$article->user->name}}</a>
+                            <a href="/profile/{{$article->user->id}}">{{$article->user->name}}</a>
                         </td>
                     </tr>
                 @endforeach

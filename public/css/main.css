@@ -94,6 +94,15 @@ h1,h2,h3,h4,h5,hr {
     border-radius: 0;
     margin-bottom: 0 !important;
 }
+.header_dropdown_menu li a{
+    background-color: burlywood;
+    opacity: 0.8;
+}
+.header_dropdown_menu li a:hover {
+    opacity: 1.0;
+    background-color: burlywood;
+}
+
 /*footer*/
 .footer {
     margin: 0;

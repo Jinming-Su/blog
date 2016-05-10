@@ -22,7 +22,10 @@
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
                     {{Auth::user()->name}}<span class="caret"></span>
                 </a>
-                <ul class="dropdown-menu" role="menu">
+                <ul class="dropdown-menu header_dropdown_menu" role="menu">
+                    <li>
+                        <a href="/dashboard/profile"><img src="/img/image/person.png" width="80px" height="80px"></a>
+                    </li>
                     <li>
                         <a href="/auth/logout">
                             <i class="fa fa-btn fa-sign-out">Logout</i>

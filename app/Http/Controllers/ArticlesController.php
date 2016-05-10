@@ -46,6 +46,7 @@ class ArticlesController extends Controller
         //3.redirect
         $input = $request->all();
         Article::create(array_merge(['user_id'=>Auth::user()->id],$input));
+
         return redirect('/article');
     }
 }
