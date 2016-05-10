@@ -7,7 +7,7 @@
     <ul class="nav navbar-nav">
         <li><a href="/" id="project">Project</a></li>
         <li><a href="/article" id="article">Article</a></li>
-        <li><a id="about_sjm">AboutSJM</a></li>
+        <li><a href="/aboutSJM" id="about_sjm">AboutSJM</a></li>
     </ul>
     <ul class="nav navbar-nav navbar-right">
         @if(Auth::guest())
