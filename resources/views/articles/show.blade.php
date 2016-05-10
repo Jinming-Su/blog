@@ -3,37 +3,43 @@
 @section('head')
     <title>{{$article->title}}</title>
     <style>
-        .content {
-            padding-top: 80px;
-        }
         .articles_index_panel {
             width: 70%;
             margin: 0 auto;
             margin-top: 20px;
         }
+        .content {
+            min-height: 650px;
+            padding-bottom: 100px;
+        }
+        .panel-heading {
+            font-size: 25px;
+            font-style: oblique;
+        }
+        .panel-body {
+            font-style: oblique;
+        }
+        .panel-footer {
+            font-size: 13px;
+            text-align: right;
+        }
+        .article_show_edit_btn {
+            margin-top: 5px;
+            padding: 5px 15px;
+        }
     </style>
-    <script type="text/javascript">
-        $(function() {
-            $('#article').addClass('active');
-        })
-    </script>
 @stop
-
 @section('body')
-
-    @include('layout/header')
-
     <div class="content">
-        <div class="panel panel-info articles_index_panel">
+        <div class="panel panel-default articles_index_panel">
             <div class="panel-heading">
-                {{$article->title}}
-                <a href="/article/{{$article->id}}/edit" class="btn btn-primary pull-right">Edit</a>
+                <b>{{$article->title}}</b>
+                @if(!Auth::guest())
+                    <a href="/article/{{$article->id}}/edit" class="btn btn-warning pull-right article_show_edit_btn">Edit</a>
+                @endif
             </div>
             <div class="panel-body">{{$article->content}}</div>
             <div class="panel-footer">{{$article->created_at}}</div>
         </div>
     </div>
-
-    @include('layout/footer')
-
 @stop

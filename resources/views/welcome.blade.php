@@ -22,7 +22,7 @@
             border-radius: 3px !important;
             background-color: white;
         }
-        .container {
+        .container1 {
             width: 1100px;
         }
         h4 {
@@ -52,7 +52,7 @@
 
     <div class="content">
         <h4 class="text-center">Just do IT</h4>
-        <div class="container">
+        <div class="container container1">
             <div class="cards">
                 <div class="card pull-left">
                     <div class="card_img">
@@ -101,7 +101,7 @@
                 </div>
             </div>
         </div>
-        <div class="container">
+        <div class="container container1">
             <div class="cards">
                 <div class="card pull-left">
                     <div class="card_img">

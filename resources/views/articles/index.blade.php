@@ -3,13 +3,23 @@
 @section('head')
     <title>Article</title>
     <style>
-        .content {
-            padding-top: 80px;
-        }
         .table {
             width: 900px;
             margin: 0;
             margin-left: 10%;
+            table-layout: fixed;
+        }
+        .table > thead > tr > th,
+        .table > tbody > tr > th,
+        .table > tfoot > tr > th,
+        .table > thead > tr > td,
+        .table > tbody > tr > td,
+        .table > tfoot > tr > td {
+            padding: 5px;
+        }
+        .table thead {
+            background-color: #d2d6de;
+            opacity: 0.8;
         }
     </style>
     <script>
@@ -27,25 +37,33 @@
         <div class="table-responsive col-md-10">
             <table class="table table-striped table-hover table-bordered">
                 <thead>
-                <tr>
-                    <td>Title</td>
-                    <td>Keyword</td>
-                    <td>Created_at</td>
-                </tr>
+                    <tr>
+                        <td class="text-center" style="width: 15%">Title</td>
+                        <td class="text-center" style="width: 20%">Keyword</td>
+                        <td class="text-center" style="width: 30%">Created_at</td>
+                        <td class="text-center" style="width: 20%">Author</td>
+                    </tr>
                 </thead>
                 @foreach($articles as $article)
                     <tr>
-                        <td>
+                        <td class="text-center my_ellipsis">
                             <a href="/article/{{$article->id}}">{{$article->title}}</a>
                         </td>
-                        <td>{{$article->content}}</td>
-                        <td>{{$article->created_at}}</td>
+                        <td class="text-center my_ellipsis">{{$article->key_word}}</td>
+                        <td class="text-center">{{$article->created_at}}</td>
+                        <td class="text-center my_ellipsis">
+                            <a>{{$article->user->name}}</a>
+                        </td>
                     </tr>
                 @endforeach
             </table>
         </div>
         <div class="col-md-2">
-            <a href="/article/create" class="btn btn-info">+New Article</a>
+            @if(Auth::guest())
+                <a>Login has more rights</a>
+            @else
+                <a href="/article/create" class="btn btn-info"><i class="fa fa-file-text-o"></i> New Article</a>
+            @endif
         </div>
         <div class="clear_both"></div>
     </div>

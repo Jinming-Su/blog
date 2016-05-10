@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Article;
 use App\Http\Requests;
+use Illuminate\Support\Facades\Auth;
 
 class ArticlesController extends Controller
 {
@@ -44,7 +45,7 @@ class ArticlesController extends Controller
         //2.save
         //3.redirect
         $input = $request->all();
-        Article::create($input);
+        Article::create(array_merge(['user_id'=>Auth::user()->id],$input));
         return redirect('/article');
     }
 }

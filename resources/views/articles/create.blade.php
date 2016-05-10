@@ -3,11 +3,11 @@
 @section('head')
     <title>Create</title>
     <style>
-        .content {
-            padding-top: 80px;
+        .container1 {
+            width: 800px;
         }
-        .container {
-            width: 1000px;
+        label {
+            font-style: oblique;
         }
     </style>
     <script>
@@ -22,16 +22,20 @@
     @include('layout/header')
 
     <div class="content">
-        <div class="container">
+        <div class="container container1">
             <form action="/article" method="post">
                 {{csrf_field()}}
                 <div class="form-group">
-                    <label>Title</label>
+                    <label><b>Title:</b></label>
                     <input type="text" name="title" class="form-control">
                 </div>
                 <div class="form-group">
-                    <label>Content</label>
+                    <label><b>Content:</b></label>
                     <textarea name="content" rows="8" class="form-control"></textarea>
+                </div>
+                <div class="form-group">
+                    <label><b>Key Word:</b></label>
+                    <input type="text" name="key_word" class="form-control">
                 </div>
                 <input type="submit" value="Submit" class="btn btn-info form-control">
             </form>
